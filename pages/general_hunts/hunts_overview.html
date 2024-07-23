@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VAULT 4624</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="scanline"></div>
+  <div class="wrapper">
+    <div class="content clearfix">
+
+      <header class="site clearfix">
+        <div class="col one">
+          <h4>VAULT 4624 <br/>SUCCESSFULL LOGIN DETECTED,<b> WELCOME Vault Dweller</b> </h4>
+          <p>==================================================</p>
+          <br/>
+          <p> >> Welcome to the Vault, fellow hunter! This log aims to outline a number of the most common ransomware behaviours, key things to look for on a hunt, cool stuff I’ve found, and handy query syntaxes for different vendor tools. Happy hunting!</p>
+          <br/>
+          <p> >> To access the information, please select a subject from the list below:</p>
+        </div>
+        </header>
+      </style>
+    </head>
+    <body>
+
+    <br/>
+    <br/>
+
+    <div class="container">
+
+    <div class="tab">
+      <button class="tablinks" onclick="openGoal(event, 'HOME')" id="defaultOpen">>> HOME</button>
+      <button class="tablinks" onclick="openGoal(event, 'REMOTE MONITORING & MANAGEMENT SOFTWARE')" id="defaultOpen">>> REMOTE MONITORING & MANAGEMENT SOFTWARE</button>
+      <button class="tablinks" onclick="openGoal(event, 'FILESHARING SOFTWARE')">>> FILESHARING SOFTWARE</button>
+      <button class="tablinks" onclick="openGoal(event, 'REMOTE LOGIN & EXTERNAL ADDRESSES')">>> REMOTE LOGIN & EXTERNAL ADDRESSES</button>
+      <button class="tablinks" onclick="openGoal(event, 'EXPLOITATION OF NET.EXE')">>> EXPLOITATION OF NET.EXE</button>
+      <button class="tablinks" onclick="openGoal(event, 'OUTBOUND SSH, SFTP & FTP TO EXTERNAL ADDRESSES')">>> OUTBOUND SSH, SFTP & FTP TO EXTERNAL ADDRESSES</button>
+      <button class="tablinks" onclick="openGoal(event, 'LARGE OUTBOUND BYTES')">>> LARGE OUTBOUND BYTES</button>
+    </div>
+
+    <div id="HOME" class="tabcontent">
+      <h4><b>HOME</b></h4>
+      <br/>
+      <p>The following options will provide valuable insight into potential security threats and vulnerabilities within a network. Please select an option from the list to view the content.</p>
+    </div>
+    
+    <div id="REMOTE MONITORING & MANAGEMENT SOFTWARE" class="tabcontent">
+      <h4><b>>> REMOTE MONITORING & MANAGEMENT SOFTWARE</b></h4>
+      <br/>
+
+      <p>
+        Remote Monitoring & Management Software (RMM) is a critical focus for threat hunters due to its pervasive use in managing and securing IT infrastructures. RMM tools provide remote access and control capabilities, which, while essential for efficient IT operations, 
+        also present an attractive target for cyber attackers. If compromised, these tools can be used to deploy malware, conduct espionage, or facilitate lateral movement within a network.<br/><br/> Threat hunters need to vigilantly monitor RMM software for signs of unauthorized access,
+        misuse, and anomalies that could indicate a breach. Ensuring the integrity of RMM systems helps maintain the security posture of the entire network and prevents potential exploitation by threat actors.
+      <br/>
+      <br/>
+      <br/>
+        Software Examples:<br/><br/>
+
+            SolarWinds N-central, ConnectWise Automate, NinjaRMM, TeamViewer, AnyDesk, ManageEngine RMM Central, N-able RMM.
+      <br/>
+      <br/>
+      <br/>
+      </p>
+      <br/>
+      <h4><b>>> VENDOR SPECIFIC:</b></h4>
+      <br/>
+      <br/>
+      <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> DEFENDER</a></li>
+      <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> CROWDSTRIKE</a></li>
+      <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> CHECKPOINT</a></li>
+      <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> PALO ALTO</a></li>
+    </div>
+    
+
+
+    <div id="FILESHARING SOFTWARE" class="tabcontent">
+      <h4><b>>> FILESHARING SOFTWARE</b></h4>
+      <br/>
+      <p>
+        Filesharing Software is a critical focus for threat hunters due to its potential for misuse in spreading malware, facilitating data exfiltration, and enabling unauthorized access to sensitive information. Filesharing tools, while essential for collaboration and productivity,
+        can become vectors for cyber threats if not properly monitored and secured. Threat actors often exploit vulnerabilities in filesharing software to deliver malicious payloads or to steal confidential data.<br/> <br/>By keeping a close eye on filesharing activities, threat hunters
+        can detect anomalies, unauthorized access, and suspicious transfers, thus preventing data breaches and maintaining the integrity of the organization's information assets.
+      <br/>
+      <br/>
+      <br/>
+        Software Examples:<br/><br/>
+
+        Dropbox, Google Drive, OneDrive, Box, WeTransfer, ShareFile, iCloud Drive, Mega, Sync.com, pCloud
+        <br/>
+        <br/>
+        <br/>
+        </p>
+        <br/>
+        <h4><b>>> VENDOR SPECIFIC:</b></h4>
+        <br/>
+        <br/>
+        <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> DEFENDER</a></li>
+        <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> CROWDSTRIKE</a></li>
+        <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> CHECKPOINT</a></li>
+        <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> PALO ALTO</a></li>
+      </div>
+    
+
+
+
+    <div id="REMOTE LOGIN & EXTERNAL ADDRESSES" class="tabcontent">
+      <h4><b>>> REMOTE LOGIN & EXTERNAL ADDRESSES</b></h4>
+      <br/>
+      <p>
+        Remote Login & External Addresses are critical areas for threat hunters to monitor due to their potential for enabling unauthorized access and facilitating cyber attacks. Remote login services allow users to access internal systems from outside the corporate network, 
+        making them attractive targets for attackers seeking to gain a foothold. <br/> <br/>By keeping a close eye on filesharing activities, threat hunters can detect anomalies, unauthorized access, and suspicious transfers, thus preventing data breaches and maintaining the integrity 
+        of the organization's information assets.
+      <br/>
+      <br/>
+      <br/>
+        Additionally, monitoring external addresses is crucial as these can be used to establish connections with command and control servers or to exfiltrate sensitive data. By closely scrutinizing remote login attempts and traffic involving external addresses, threat hunters can identify
+        suspicious activities occuring all throughout the network.
+        <br/>
+        <br/>
+        <br/>
+        </p>
+        <br/>
+        <h4><b>>> VENDOR SPECIFIC:</b></h4>
+        <br/>
+        <br/>
+        <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> DEFENDER</a></li>
+        <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> CROWDSTRIKE</a></li>
+        <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> CHECKPOINT</a></li>
+        <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> PALO ALTO</a></li>
+      </div>
+
+
+      <div id="EXPLOITATION OF NET.EXE" class="tabcontent">
+        <h4><b>>> EXPLOITATION OF NET.EXE</b></h4>
+        <br/>
+        <p>
+          Exploitation of NET.EXE is a critical concern for threat hunters, especially when it involves the creation of user accounts. The NET.EXE command is a versatile and powerful utility in Windows environments, used for a variety of administrative tasks, including managing user accounts,
+          services, and network resources. However, this same power makes it an attractive target for cyber attackers. If compromised, attackers can use NET.EXE to create unauthorized user accounts, often with administrative privileges, to gain persistent access to the network. 
+        <br/>
+        <br/>
+        <br/>
+          Monitoring for unusual or suspicious use of NET.EXE, particularly for account creation, can help threat hunters identify and respond to unauthorized activities, preventing privilege escalation and maintaining the security of the network. 
+          <br/>
+          <br/>
+          <br/>
+          </p>
+          <br/>
+          <h4><b>>> VENDOR SPECIFIC:</b></h4>
+          <br/>
+          <br/>
+          <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> DEFENDER</a></li>
+          <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> CROWDSTRIKE</a></li>
+          <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> CHECKPOINT</a></li>
+          <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> PALO ALTO</a></li>
+        </div>
+
+
+
+        <div id="OUTBOUND SSH, SFTP & FTP TO EXTERNAL ADDRESSES" class="tabcontent">
+          <h4><b>>> OUTBOUND SSH, SFTP & FTP TO EXTERNAL ADDRESSES</b></h4>
+          <br/>
+          <p>
+            Outbound SSH, SFTP, and FTP to External Addresses are critical areas of focus for threat hunters due to their potential use in data exfiltration and unauthorized access. These protocols facilitate secure file transfer and remote access,
+            but when used to connect to external addresses, they can be exploited by attackers to transfer sensitive data out of the organization or to establish remote control over compromised systems.
+          <br/>
+          <br/>
+          <br/>
+            Monitoring outbound SSH, SFTP, and FTP traffic helps threat hunters detect unusual or unauthorized connections, identify potential data breaches, and prevent malicious actors from maintaining external communication channels.  
+            <br/>
+            <br/>
+            <br/>
+            </p>
+            <br/>
+            <h4><b>>> VENDOR SPECIFIC:</b></h4>
+            <br/>
+            <br/>
+            <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> DEFENDER</a></li>
+            <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> CROWDSTRIKE</a></li>
+            <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> CHECKPOINT</a></li>
+            <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> PALO ALTO</a></li>
+          </div>
+
+
+          <div id="LARGE OUTBOUND BYTES" class="tabcontent">
+            <h4><b>>> LARGE OUTBOUND BYTES</b></h4>
+            <br/>
+            <p>
+              Large Outbound Bytes are a significant concern for threat hunters as they can indicate data exfiltration or other unauthorized transfers of sensitive information. When unusually large amounts of data are being sent out of the network, it may suggest that an attacker
+              is stealing valuable data, whether intellectual property, personal information, or proprietary business information. 
+            <br/>
+            <br/>
+            <br/>
+              Monitoring for large outbound data transfers helps threat hunters detect and respond to potential breaches in real-time, mitigating the risk of data loss and maintaining the security of the organization's information assets.  
+              <br/>
+              <br/>
+              <br/>
+              </p>
+              <br/>
+              <h4><b>>> VENDOR SPECIFIC:</b></h4>
+              <br/>
+              <br/>
+              <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> DEFENDER</a></li>
+              <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> CROWDSTRIKE</a></li>
+              <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> CHECKPOINT</a></li>
+              <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> PALO ALTO</a></li>
+            </div>
+
+
+
+    <script>
+    function openGoal(evt, goalName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(goalName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
+   
+
+    </div>
+  </div>
+</div>
+
+ 
+</body>
+</html>
