@@ -77,6 +77,11 @@ h4 b {
 	color: #f0ffff;
 }
 
+h5 b {
+	color: #ffb642;
+}
+
+
 a {
 	color: #1aff80 ;
 	text-decoration: none;
@@ -93,10 +98,10 @@ p {
 
 }
 
-pre {
+pre, i {
     font-family: 'VT323', Courier;
     margin: left;
-    width: fit-content;
+    width: inherit;
 }
 
 
@@ -352,3 +357,62 @@ a.button:hover {
 	
 }
 
+
+
+
+/* Collapsible styles */
+.collapsible {
+    background-color: #000000ec;
+    color: #1aff80;
+	cursor: pointer;
+    padding: 12px;
+    min-width: 1800px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    font-family: 'VT323', Courier, monospace;
+	}
+
+	.active, .collapsible:hover {
+	background-color: #00dd001c;
+	}
+		  
+	.collapsecontent {
+		background-color: #000000;
+		color: #1aff80 ;
+		font-family: 'VT323', Courier;
+		font-size: 0.9em;
+		margin: 0;
+		padding: 5px;
+		width: fit-content;
+		display: none; /* Hide all tab content by default */
+	}
+
+
+	.code-container {
+		position: relative;
+		background-color: #00dd000e;
+		color: #1aff80;
+		padding: 20px;
+		border: 1px solid #00dd0009;
+		overflow: auto;
+		max-width: 1800px;
+		min-width: 1800px;
+		max-height: 700px;
+		white-space: nowrap;
+	}
+	.code-container pre {
+		margin: 0;
+	}
+	.copy-button {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		background-color: #00dd001a;
+		color: #f0ffff;
+		border: none;
+		padding: 5px 10px;
+		cursor: pointer;
+	}

@@ -22,6 +22,7 @@ $(document).ready(function () {
     });
   }
 
+
   function openCity(evt, cityName) {
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -42,3 +43,6 @@ $(document).ready(function () {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
   }
+
+
+

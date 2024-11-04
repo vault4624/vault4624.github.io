@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VAULT 4624</title>
+  <link rel="stylesheet" href="../../../../css/styles.css">
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="scanline"></div>
+  <div class="wrapper">
+    <div class="content clearfix">
+
+      <header class="site clearfix">
+        <div class="col one">
+          <h4>VAULT 4624 <br/>SUCCESSFULL LOGIN DETECTED,<b> WELCOME Vault Dweller</b> </h4>
+          <p>==================================================</p>
+          <br/>
+          <p> >> You have chosen the INITIAL ACCESS segment of this terminal. Welcome! - In here, you'll hopefully find a variety of hunts and queries that are both aligned with initial access, and useful for your searches. Not all of the information you find here will be that of mine.
+             All resources and credits will be applied appropriately to the authors.</p>
+          <br/>
+          <p> >> To access the information, please select a subject from the list below:</p>
+        </div>
+        </header>
+      </style>
+    </head>
+    <body>
+
+    <br/>
+    <br/>
+
+    <div class="container">
+
+    <div class="tab">
+      <button class="tablinks" onclick="openGoal(event, 'INITIAL ACCESS')" id="defaultOpen">>> INITIAL ACCESS</button>
+      <button class="tablinks" onclick="openGoal(event, 'Detecting Browser Extension Installations')" id="defaultOpen">>> Detecting Browser Extension Installations</button>
+
+    </div>
+
+    <div id="INITIAL ACCESS" class="tabcontent">
+      <h4><b>INITIAL ACCESS</b></h4>
+      <br/>
+      <p>The following options will provide valuable insight into potential security threats and vulnerabilities within a network. Please select an option from the list to view the content.</p>
+    </div>
+    
+
+
+
+    
+    <div id="Detecting Browser Extension Installations" class="tabcontent">
+      <h4><b>>> Detecting Browser Extension Installations</b></h4>
+      <br/>
+<pre><h4><b>>> FIREFOX</b></h4>
+
+    On a Windows machine, the installation of a Firefox add-on triggers the following operations by the Firefox.exe process:
+    
+
+<h5><b>>> File Creation</b></h5>
+    
+    Files ‘myaddon’ and ‘myaddon.xpi’ appear in:
+
+    <i>C:\Users\*\AppData\Roaming\Mozilla\Firefox\Profiles\*.default-esr\extensions\staged\</i>
+
+
+<h5><b>>> Add-on GUID in</b></h5> 
+
+    <i>C:\Users\*\AppData\Roaming\Mozilla\Firefox\Profiles\*.default-esr\storage\default\moz-extension+++(myaddonGUID)*</i>
+
+
+<h5><b>>> Image Loaded:</b></h5>
+    
+    <i>C:\Program Files (x86)\Mozilla Firefox\xul.dll</i>
+
+
+<h5><b>>> Proxy Logs:</b></h5>
+    
+    URLs accessed:
+
+    <i>http://addons.mozilla.org</i>
+
+    <i>http://addons.mozilla.org/firefox/downloads/file/*</i>
+
+    URLs ending with ".xpi"
+
+
+<h5><b>>> CLI Installation (if occurred, check parent process):</b></h5>
+    
+    CommandLine: firefox -install-global-extension *.xpi
+
+
+<h5><b>>> Extensions Information:</b></h5>
+    
+    Details available in extensions.json within the Firefox user profile.
+
+
+<h4><b>>> CHROME</b></h4>
+
+    The installation of a Chrome add-on leaves the following traces:
+
+    
+<h5><b>>> Download Process:</b></h5>
+    
+    chrome.exe loads BitsProxy.dll > svchost.exe loads bits*.dll > BITS downloads the add-on and logs events in “Microsoft-Windows-Bits-Client” with EventID 59 & 60.
+
+
+<h5><b>>> URL Requests:</b></h5>
+    
+    URLs accessed:
+
+    <i>http://edgedl[.]me.gvt1[.]com/edgedl/release2/chrome_component/*.crx3</i>
+
+    <i>http://edgedl[.]me.gvt1[.]com/edgedl/chromewebstore/*.crx</i>
+
+    <i>https://clients2[.]google[.]com/service/update2/crx?*</i>
+
+    <i>https://clients2[.]googleusercontent[.]com/crx/blobs/*.crx</i>
+
+    URLs ending with ".crx" or ".crx3" (if not downloaded from the Chrome Web Store)
+
+
+<h5><b>>> File Creation:</b></h5>
+    
+    Upon BITS download completion, svchost.exe writes the .crx3 file to:
+
+    C:\Program Files\chrome_BITS_*\*.crx3
+
+    chrome.exe writes to:
+
+    <i>C:\Users\username\AppData\Local\Google\Chrome\User Data\Webstore Downloads\*.crx</i>
+
+    <i>C:\Users\username\AppData\Local\Temp\scoped_dir*\*.crx</i>
+
+    <i>C:\Users\username\AppData\Local\Temp\scoped_dir*\CRX_INSTALL\assets\EXTENSION_NAME\*</i>
+
+    <i>C:\Users\username\AppData\Local\Google\Chrome\User Data\Default\Extensions\EXTENSION_NAME\*</i>
+
+
+<h5><b>>> Registry Access:</b></h5>
+    
+    During installation, chrome.exe accesses:
+
+    <i>HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\*\.crx\*</i>
+
+
+<h5><b>>> Image Loaded by chrome.exe:</b></h5>
+    
+    Not useful for detection, but includes:
+
+    <i>C:\Program Files\Google\Chrome\Application\*\chrome_elf.dll</i>
+
+    <i>C:\Windows\System32\BitsProxy.dll</i>
+
+
+<h5><b>>> CLI Installation (if occurred):</b></h5>
+    
+    Look for command lines with chrome.exe containing .crx or .crx3:
+
+    Example: chrome.exe --enable-extensions --install-extension="*.crx"
+
+
+<h5><b>>> Note:</b></h5>
+    
+    Each folder in C:\Users\username\AppData\Local\Google\Chrome\User Data\Default\Extensions\ represents a Chrome extension.</pre>
+
+      <br/>
+      <br/>
+      </p>
+      <br/>
+      <h4><b>>> VENDOR SPECIFIC:</b></h4>
+      <br/>
+      <br/>
+      <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> DEFENDER</a></li>
+      <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> CROWDSTRIKE</a></li>
+      <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> CHECKPOINT</a></li>
+      <li><a href="../pages/general_hunts/hunts_overview.html" title="">>> PALO ALTO</a></li>
+    </div>
+    
+
+
+
+
+    <script>
+    function openGoal(evt, goalName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(goalName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
+   
+
+    </div>
+  </div>
+</div>
+
+ 
+</body>
+</html>
