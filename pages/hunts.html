@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VAULT 4624</title>
+  <title>VAULT 4624 - HUNTS</title>
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -11,76 +11,99 @@
   <div class="scanline"></div>
   <div class="wrapper">
     <div class="content clearfix">
-
+      <!-- Welcome header animations -->
       <header class="site clearfix">
         <div class="col one">
-          <h4>VAULT 4624 <br/>SUCCESSFULL LOGIN DETECTED,<b> WELCOME Vault Dweller</b> </h4>
-          <p>==================================================</p>
-          <br/>
-          <p>>> Welcome to the Vault, fellow hunter! This log aims to outline a number of the most common ransomware behaviours, key things to look for on a hunt, cool stuff I’ve found, and handy query syntaxes for different vendor tools. Happy hunting!</p>
-          <br/>
-          <p>>> To access the information, please select a subject from the list below:</p>
+          <h4 id="vaultOS" class="hidden">VaultOS v7.1.4</h4>
+          <p id="separator-1" class="hidden">==================================================</p>
+          <h4 id="header-title" class="hidden typing">VAULT <span style="color:#ffffff;">4624</span> - THREAT HUNTING</h4>
+          <p id="separator-2" class="hidden">==================================================</p>
+          <p id="line4" class="hidden typing">&gt;&gt; Welcome to the Vault, fellow hunter! This log outlines common ransomware behaviors, key hunt indicators, cool discoveries, and handy query syntaxes.</p>
+          <p id="line5" class="hidden typing">&gt;&gt; Please select an option from below:</p>
+          <p id="separator-3" class="hidden">==================================================</p>
         </div>
-        </header>
+      </header>
 
-        <br/>
-        <br/>
+      <br/>
+      <br/>
 
-        <nav class="site clear">
-        <ul>
-          <h4><b>>> ALL CATEGORIES</b></h4>
-          <br/>
-          <li><a href="../pages/general_hunts/hunts_overview.html" title="">MY FAVOURITE'S</a></li>
-          <li><a href="../pages/general_hunts/mitre/hunts_mitre.html" title="">MITRE ATT&CK SPECIFIC</a></li>
-          <li><a href="../pages/general_hunts/vendors/hunts_vendors.html" title="">VENDOR SPECIFIC</a></li>
-          <li><a href="../pages/general_hunts/ports/hunts_ports.html" title="">PORT HUNTS</a></li>
-          <br/>
-          <br/>
-          <br/>
-        
-          <h4><b>>> ALPHABETICAL SEARCH</b></h4>
-          <br/>
-          <li><a href="../pages/hunts_a/a_hunts.html" title="">A</a></li>
-          <li><a href="../pages/hunts_b/b_hunts.html" title="">B</a></li>
-          <li><a href="../pages/hunts_c/c_hunts.html" title="">C</a></li>
-          <li><a href="../pages/hunts_d/d_hunts.html" title="">D</a></li>
-          <li><a href="../pages/hunts_e/e_hunts.html" title="">E</a></li>
-          <li><a href="../pages/hunts_f/f_hunts.html" title="">F</a></li>
-          <li><a href="../pages/hunts_g/g_hunts.html" title="">G</a></li>
-          <li><a href="../pages/hunts_h/h_hunts.html" title="">H</a></li>
-          <li><a href="../pages/hunts_i/i_hunts.html" title="">I</a></li>
-          <li><a href="../pages/hunts_j/j_hunts.html" title="">J</a></li>
-          <li><a href="../pages/hunts_k/k_hunts.html" title="">K</a></li>
-          <li><a href="../pages/hunts_l/l_hunts.html" title="">L</a></li>
-          <li><a href="../pages/hunts_m/m_hunts.html" title="">M</a></li>
-          <li><a href="../pages/hunts_n/n_hunts.html" title="">N</a></li>
-          <li><a href="../pages/hunts_o/o_hunts.html" title="">O</a></li>
-          <li><a href="../pages/hunts_p/p_hunts.html" title="">P</a></li>
-          <li><a href="../pages/hunts_q/q_hunts.html" title="">Q</a></li>
-          <li><a href="../pages/hunts_r/r_hunts.html" title="">R</a></li>
-          <li><a href="../pages/hunts_s/s_hunts.html" title="">S</a></li>
-          <li><a href="../pages/hunts_t/t_hunts.html" title="">T</a></li>
-          <li><a href="../pages/hunts_u/u_hunts.html" title="">U</a></li>
-          <li><a href="../pages/hunts_v/v_hunts.html" title="">V</a></li>
-          <li><a href="../pages/hunts_w/w_hunts.html" title="">W</a></li>
-          <li><a href="../pages/hunts_x/x_hunts.html" title="">X</a></li>
-          <li><a href="../pages/hunts_y/y_hunts.html" title="">Y</a></li>
-          <li><a href="../pages/hunts_z/z_hunts.html" title="">Z</a></li>
-          <br/>
-          <br/>
-          <br/>
-        <nav class="site clear">
-            <ul>
-              <h4><b>>> NAVIGATION:</b></h4>
-              <br/>
-              <li><a href="../index.html" title="">RETURN HOME</a></li>
-              <li><a href="../index.html" title="">BACK</a></li>
-            </ul>
-            </nav>
-        </ul>
-        </nav>
+      <!-- Container hidden until after intro -->
+      <div id="container" class="container hidden">
+        <!-- Tab buttons -->
+        <div class="tab">
+          <button class="tablinks" onclick="openTab(event, 'CATEGORIES')" id="defaultOpen">[ ALL CATEGORIES ]</button>
+          <button class="tablinks" onclick="openTab(event, 'NAVIGATION')">[ NAVIGATION ]</button>
+        </div>
 
+        <!-- Categories content -->
+        <div id="CATEGORIES" class="tabcontent">
+          <h4><b>ALL CATEGORIES:</b></h4>
+          <br/>
+          <ul>
+            <li><a href="../pages/general_hunts/hunts_overview.html">&gt; MY FAVOURITES</a></li>
+            <li><a href="../pages/general_hunts/mitre/hunts_mitre.html">&gt; MITRE ATT&CK SPECIFIC</a></li>
+            <li><a href="../pages/general_hunts/vendors/hunts_vendors.html">&gt; VENDOR SPECIFIC</a></li>
+            <li><a href="../pages/general_hunts/ports/hunts_ports.html">&gt; PORT HUNTS</a></li>
+          </ul>
+        </div>
+
+        <!-- Navigation content -->
+        <div id="NAVIGATION" class="tabcontent">
+          <h4><b>NAVIGATION:</b></h4>
+          <br/>
+          <ul>
+            <li><a href="../index.html">&gt; RETURN HOME</a></li>
+            <li><a href="../index.html">&gt; BACK</a></li>
+          </ul>
+        </div>
+      </div> <!-- /.container -->
     </div>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = [
+        { id: 'vaultOS', delay: 300 },
+        { id: 'separator-1', delay: 450 },
+        { id: 'header-title', delay: 700, duration: 850 },
+        { id: 'separator-2', delay: 1600 },
+        { id: 'line4', delay: 1800, duration: 850 },
+        { id: 'line5', delay: 2700, duration: 850 },
+        { id: 'separator-3', delay: 3600 },
+        { id: 'container', delay: 4000 }
+      ];
+      elements.forEach(item => {
+        setTimeout(() => {
+          const el = document.getElementById(item.id);
+          if (!el) return;
+          el.classList.remove('hidden');
+          el.classList.add('fade-in');
+          if (item.duration) {
+            el.style.width = '0';
+            setTimeout(() => { el.style.width = '100%'; }, 50);
+          }
+          // After container fades in, open default tab
+          if (item.id === 'container') {
+            document.getElementById('defaultOpen').click();
+          }
+        }, item.delay);
+      });
+    });
+
+    // Tab functionality (from hunts_overview.html)
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
 </body>
 </html>
