@@ -2,21 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>VAULT 4624</title>
   <link rel="stylesheet" href="../../css/styles.css">
 
   <style>
-
     .tabcontent {
       display: none;
       padding: 15px;
       border: 1px solid #4afa9a;
       background-color: rgba(0, 0, 0, 0.7);
-      width: 250%;
+      width: 100%;
       box-sizing: border-box;
     }
-    
 
     /* Responsive styles to prevent text cutoff */
     @media (max-width: 768px) {
@@ -51,13 +49,10 @@
       }
     }
     
- 
     @keyframes scanline {
       0% { transform: translateY(-100%); }
       100% { transform: translateY(100%); }
     }
-    
-
   </style>
 </head>
 <body>
@@ -65,19 +60,9 @@
   <div class="scanline"></div>
   <div class="wrapper">
     <div class="content clearfix">
-
+      <!-- Welcome header animations -->
       <header class="site clearfix">
         <div class="col one">
-          <h4 id="vault-title" style="display: block !important;">VAULT 4624 <br/>SUCCESSFUL LOGIN DETECTED,<b> WELCOME Vault Dweller</b></h4>
-          <p id="separator" style="display: block !important;">==================================================</p>
-          <br/>
-          <div class="intro-text">
-            <p class="typing fade-in"> >> Welcome to the Vault, fellow hunter! This log aims to outline a number of the most common ransomware behaviours, key things to look for on a hunt, cool stuff I've found,</p>
-            <p class="typing fade-in">    and handy query syntaxes for different vendor tools. Happy hunting!</p>
-            <br/>
-            <p class="typing fade-in"> >> To access the information, please select a subject from the list below:</p>
-          </div>
-                  <div class="col one">
           <h4 id="vaultOS" class="hidden">VaultOS v7.1.4</h4>
           <p id="separator-1" class="hidden">==================================================</p>
           <h4 id="header-title" class="hidden typing">VAULT <span style="color:#ffffff;">4624</span> - THREAT HUNTING</h4>
@@ -86,14 +71,12 @@
           <p id="line5" class="hidden typing">&gt;&gt; Please select an option from below:</p>
           <p id="separator-3" class="hidden">==================================================</p>
         </div>
-        </div>
       </header>
       
       <br/>
       <br/>
       <!--THIS SECTION CONTAINS THE TAB BUTTONS-->
-      <div class="container">
-
+      <div id="container" class="container hidden">
         <div class="tab">
           <button class="tablinks" onclick="openGoal(event, 'HOME')" id="defaultOpen">[ HOME ]</button>
           <button class="tablinks" onclick="openGoal(event, 'REMOTE MONITORING & MANAGEMENT SOFTWARE')">[ REMOTE MONITORING & MANAGEMENT SOFTWARE ]</button>
@@ -298,15 +281,36 @@ Minimum Log Source Requirement: Windows</pre>
 
   <!-- JAVASCRIPT -->
   <script>
-
+    // Animation sequence for elements appearing
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = [
+        { id: 'vaultOS', delay: 300 },
+        { id: 'separator-1', delay: 450 },
+        { id: 'header-title', delay: 700, duration: 850 },
+        { id: 'separator-2', delay: 1600 },
+        { id: 'line4', delay: 1800, duration: 850 },
+        { id: 'line5', delay: 2700, duration: 850 },
+        { id: 'separator-3', delay: 3600 },
+        { id: 'container', delay: 4000 }
+      ];
       
-      // Animate intro text
-      const paragraphs = document.querySelectorAll('.typing');
-      paragraphs.forEach((p, index) => {
+      elements.forEach(item => {
         setTimeout(() => {
-          p.classList.add('fade-in');
-        }, 300 * (index + 1));
+          const el = document.getElementById(item.id);
+          if (!el) return;
+          el.classList.remove('hidden');
+          el.classList.add('fade-in');
+          if (item.duration) {
+            el.style.width = '0';
+            setTimeout(() => { el.style.width = '100%'; }, 50);
+          }
+          // After container fades in, open default tab
+          if (item.id === 'container') {
+            document.getElementById('defaultOpen').click();
+          }
+        }, item.delay);
       });
+    });
 
     // Function to open a specific tab
     function openGoal(evt, goalName) {
@@ -322,9 +326,6 @@ Minimum Log Source Requirement: Windows</pre>
       document.getElementById(goalName).style.display = "block";
       evt.currentTarget.className += " active";
     }
-    
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
 
     // Handle collapsible sections
     var coll = document.getElementsByClassName("collapsible");
@@ -351,7 +352,6 @@ Minimum Log Source Requirement: Windows</pre>
         alert("Failed to copy code: " + err);
       });
     }
-
   </script>
 </body>
 </html>

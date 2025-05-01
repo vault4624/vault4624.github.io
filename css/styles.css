@@ -194,6 +194,7 @@ h1, h2, h3, h4, h5, h6 {
   white-space: nowrap;
 }
 
+
 h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
   color: var(--main-color);
 }
@@ -278,6 +279,7 @@ ul a:after, p a:after {
 .wrapper, .content {
   width: 100%;
   max-width: 100%;
+  overflow-x: hidden;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
@@ -607,6 +609,7 @@ nav.site ul li a {
   border-left: none;
   min-height: 300px;
   position: relative;
+  overflow-x: hidden;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0);
   z-index: 1020;
 }
@@ -616,6 +619,7 @@ nav.site ul li a {
   padding: 0 10px;
   min-width: 10px;
   text-align: left;
+  overflow-x: hidden;
 }
 
 .tab-transition {
@@ -801,7 +805,7 @@ a.button:hover {
 }
 
 .code-container::before {
-  content: "RobCo Industries (TM) Terminal";
+  content: "Vaut 4624 Terminal";
   display: block;
   padding-bottom: 5px;
   margin-bottom: 10px;
@@ -977,4 +981,28 @@ a {
 a:hover {
   text-decoration: underline;
   color: #ffffff;
+}
+
+/* Remove typing cursor from animations */
+.typing::after,
+.typing::before,
+.fade-in::after,
+.fade-in::before,
+[class*="typing"]::after,
+[class*="typing"]::before {
+  content: none !important;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* If cursor is implemented as a border */
+.typing, 
+.fade-in {
+  border-right: none !important;
+}
+
+/* If cursor is implemented with animation */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 0; }
 }
